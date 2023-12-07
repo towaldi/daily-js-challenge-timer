@@ -11,6 +11,7 @@ const timer = document.getElementById('timer');
 
 const roundTimerBtn = document.getElementById('round-timer-btn');
 const stopTimerBtn = document.getElementById('stop-timer-btn');
+const resetTimerBtn = document.getElementById('reset-timer-btn');
 const startTimerBtn = document.getElementById('start-timer-btn');
 
 
@@ -23,7 +24,7 @@ startTimerBtn.addEventListener('click', () => {
 function updateInterval() {
     milliseconds += 10;
 
-    //
+    // Calculate hole seconds
     const totalSeconds = Math.floor(milliseconds / 1000);
 
     // Extract minutes and seconds
@@ -43,5 +44,30 @@ function updateInterval() {
 
 // Stop timer
 stopTimerBtn.addEventListener('click', () => {
+
+    // Stops timer
     clearInterval(timerInterval);
+
+    // Hide button
+    stopTimerBtn.classList.add('d-none');
+
+    // Show reset button
+    resetTimerBtn.classList.remove('d-none');
+});
+
+
+// Reset timer
+resetTimerBtn.addEventListener('click', () => {
+    // Stops timer
+    clearInterval(timerInterval);
+
+    // Rests timmer to "00:00,00"
+    milliseconds = 0;
+    timer.innerText = '00:00,00';
+
+    // Hide button
+    resetTimerBtn.classList.add('d-none');
+
+    // Show stop button
+    stopTimerBtn.classList.remove('d-none');
 });
