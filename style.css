@@ -84,7 +84,11 @@ main {
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+}
 
+span {
+    /* display & box model */
+    margin: 0.5rem 0 0.5rem 0;
 }
 
 

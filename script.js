@@ -75,7 +75,8 @@ resetTimerBtn.addEventListener('click', () => {
     // Show stop button
     stopTimerBtn.classList.remove('d-none');
 
-    // Rest roundList
+    // Rest roundCounter + roundList
+    roundCounter = 1;
     roundList.innerHTML = '';
 });
 
