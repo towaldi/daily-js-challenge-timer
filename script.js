@@ -2,6 +2,7 @@
  * Global variables
  * -> Timer
  * -> Buttons
+ * -> Round list
  */
 
 let timerInterval;
@@ -13,6 +14,9 @@ const roundTimerBtn = document.getElementById('round-timer-btn');
 const stopTimerBtn = document.getElementById('stop-timer-btn');
 const resetTimerBtn = document.getElementById('reset-timer-btn');
 const startTimerBtn = document.getElementById('start-timer-btn');
+
+let roundCounter = 1;
+let roundList = document.getElementById('rounds-list');
 
 
 // Starts timer
@@ -70,4 +74,24 @@ resetTimerBtn.addEventListener('click', () => {
 
     // Show stop button
     stopTimerBtn.classList.remove('d-none');
+
+    // Rest roundList
+    roundList.innerHTML = '';
+});
+
+
+// Save time - round
+roundTimerBtn.addEventListener('click', () => {
+
+    // Capture current time
+    const currentTimerValue = timer.innerText;
+
+    // Create "round count + current time" format
+    roundList.innerHTML += /*html*/   `<div class="round">
+                                <span>Round ${roundCounter}</span>
+                                <span>${currentTimerValue}</span>
+                            </div>`;
+
+    // Increase counter by 1
+    roundCounter++;
 });

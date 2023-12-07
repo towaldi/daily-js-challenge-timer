@@ -71,6 +71,22 @@ main {
     
 }
 
+.rounds-container {
+    /* display & box model */
+    display: flex;
+    flex-direction: column;
+    width: 18rem;
+}
+
+.round {
+    /* display & box model */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+
+}
+
 
 /* buttons
    ========================================================================== */
@@ -133,7 +149,7 @@ p {
     color: #fff;
 }
 
-a, .btn {
+a, .btn, span {
     font-family: 'Roboto', 'Arial Narrow', Arial, sans-serif;
     font-style: normal;
     font-weight: 400;
